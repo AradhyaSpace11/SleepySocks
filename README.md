@@ -1,39 +1,35 @@
 # SleepySocks
-# Code for the SleepySocks project has now been open to public for improvement
 
+The code for the SleepySocks project has now been opened to the public for improvement. This project leverages a Piezo-Electric transducer to detect pressure changes and could be adapted for various innovative applications.
 
-int PressureSensyThingy = A0;
+## Description
 
-# The Pressure Sensy Thingy here refers to the Piezo- Electric transducer
+The "Pressure Sensy Thingy" refers to the Piezo-Electric transducer, a crucial component of our project. It's important to note that threshold values, which trigger the signal shoot, vary depending on the quality, size, and material of the Piezo-electric transducer.
 
+## Code
+
+```cpp
+int PressureSensyThingy = A0; // The Pressure Sensy Thingy refers to the Piezo-Electric transducer.
 byte val = 0;
-
-int heswokeup = 150;
-
-# heswokeup refers to he threshold value exceeding which triggers the signal shoot
-# Threshold values vary and depend on the quality, size and material of the Piezo-electric transducer
-
+int heswokeup = 150; // `heswokeup` refers to the threshold value. Exceeding this triggers the signal shoot.
 
 void setup() {
-Serial.begin(9600);
-pinMode(PressureSensyThingy, INPUT);
+    Serial.begin(9600);
+    pinMode(PressureSensyThingy, INPUT);
+    // Some development boards have different input pins. Check the documentation to determine the best input pin.
 }
-
-# Some dev boards have different input pins. You can check the documentation to determine which input pin is the best.
-  
 
 void loop() {
+    val = analogRead(PressureSensyThingy);
 
-  val = analogRead(PressureSensyThingy);
+    if (val >= heswokeup) {
+        Serial.println(val); // Outputs the value if the threshold is exceeded.
+    }
 
-  if (val >= heswokeup)
-  
-  {
-    Serial.println(val);
+    delay(100); // Delays are crucial for preventing too frequent readings.
 }
 
-  delay(100);  
+```
 
-}
+**Note**: If you have been observing the nuances of sensor-based programming, the use of delays might bring a smile to your face. It's a simple yet effective way to manage sensor data collection frequency.
 
-# if you have been observing me for a while, then you will understand why we use delays HAHA
