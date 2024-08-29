@@ -1,6 +1,6 @@
 # SleepySocks
 
-The code for the SleepySocks project has now been opened to the public for improvement. This project leverages a Piezo-Electric transducer to detect pressure changes and could be adapted for various innovative applications.
+code for the SleepySocks project
 
 ## Description
 
