@@ -33,3 +33,5 @@ void loop() {
 
 **Note**: If you have been observing the nuances of sensor-based programming, the use of delays might bring a smile to your face. It's a simple yet effective way to manage sensor data collection frequency.
 
+I hope this helps 
+
